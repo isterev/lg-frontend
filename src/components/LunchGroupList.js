@@ -16,10 +16,10 @@ export const LunchGroupList = ({data, onDelete}) => (
             <TableHeader>
                 <TableRow>
                     <TableColumn></TableColumn>
+                    <TableColumn>Date/ Time</TableColumn>
                     <TableColumn>Place</TableColumn>
-                    <TableColumn>Date</TableColumn>
-                    <TableColumn>Begintime</TableColumn>
-                    <TableColumn>Endtime</TableColumn>
+                    <TableColumn>Members</TableColumn>
+                    <TableColumn>Details</TableColumn>
                     <TableColumn>More Details</TableColumn>
                 </TableRow>
             </TableHeader>

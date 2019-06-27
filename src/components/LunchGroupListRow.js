@@ -20,8 +20,8 @@ export class LunchGroupListRow extends React.Component {
             <TableRow key={this.props.key}>
                 <TableColumn>{this.props.lunch.place}</TableColumn>
                 <TableColumn>{this.props.lunch.date}</TableColumn>
-                <TableColumn>{this.props.lunch.begintime}</TableColumn>
-                <TableColumn>{this.props.lunch.endtime}</TableColumn>
+                <TableColumn>{this.props.lunch.members}</TableColumn>
+                <TableColumn>{this.props.lunch.details}</TableColumn>
                 <TableColumn>{this.props.lunch.description}</TableColumn>
                 /*{UserService.isAuthenticated() ?
                     <TableColumn><Link to={`/edit/${this.props.movie._id}`}><FontIcon>mode_edit</FontIcon></Link></TableColumn>

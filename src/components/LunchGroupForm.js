@@ -19,27 +19,27 @@ class LunchGroupForm extends React.Component {
 
         if(this.props.lunch != undefined) {
             this.state = {
-                place : props.lunch.place,
                 date : props.lunch.date,
-                begintime : props.lunch.begintime,
-                endtime: props.lunch.endtime,
+                place : props.lunch.place,
+                members : props.lunch.members,
+                details: props.lunch.details,
                 description: props.lunch.description
 
             };
         } else {
             this.state = {
-                place : '',
                 date : '',
-                begintime : '',
-                endtime: '',
+                place : '',
+                members: '',
+                details: '',
                 description: ''
             };
         }
 
-        this.handleChangePlace = this.handleChangePlace.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
-        this.handleChangeBegintime = this.handleChangeBegintime.bind(this);
-        this.handleChangeEndtime = this.handleChangeEndtime.bind(this);
+        this.handleChangePlace = this.handleChangePlace.bind(this);
+        this.handleChangeMembers = this.handleChangeMembers.bind(this);
+        this.handleChangeDetails = this.handleChangeDetails.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this)
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,11 +53,11 @@ class LunchGroupForm extends React.Component {
         this.setState(Object.assign({}, this.state, {date: value}));
     }
 
-    handleChangeBegintime(value) {
+    handleChangeMembers(value) {
         this.setState(Object.assign({}, this.state, {begintime: value}));
     }
 
-    handleChangeEndtime(value) {
+    handleChangeDetails(value) {
         this.setState(Object.assign({}, this.state, {endtime: value}));
     }
     handleChangeDescription(value) {
@@ -74,8 +74,8 @@ class LunchGroupForm extends React.Component {
 
         lunch.place = this.state.place;
         lunch.date = this.state.date;
-        lunch.begintime = this.state.begintime;
-        lunch.endtime = this.state.endtime;
+        lunch.members = this.state.members;
+        lunch.details = this.state.details;
         lunch.description = this.state.description;
 
         this.props.onSubmit(lunch);
@@ -98,28 +98,28 @@ class LunchGroupForm extends React.Component {
                         <TextField
                             label="Date"
                             id="DateField"
-                            type="Date"
+                            type="text"
                             className="md-row"
                             required={true}
                             value={this.state.date}
                             onChange={this.handleChangeDate}
                             errorText="Date is required"/>
                         <TextField
-                            label="BeginTime"
-                            id="BGTField"
+                            label="Members"
+                            id="MembersField"
                             type="text"
                             className="md-row"
                             required={false}
-                            value={this.state.begintime}
-                            onChange={this.handleChangeBegintime}/>
+                            value={this.state.members}
+                            onChange={this.handleChangeMembers}/>
                         <TextField
-                            label="Endtime"
-                            id="EndtimeField"
+                            label="Details"
+                            id="DetailsField"
                             type="text"
                             className="md-row"
                             required={true}
-                            value={this.state.endtime}
-                            onChange={this.handleChangeEndtime}
+                            value={this.state.details}
+                            onChange={this.handleChangeDetails}
                             errorText="Endtime is required"/>
                         <TextField
                             label="Description"
@@ -132,7 +132,7 @@ class LunchGroupForm extends React.Component {
 
 
                         <Button id="submit" type="submit"
-                                disabled={this.state.place == undefined || this.state.place == '' || this.state.date == undefined || this.state.date == '' || this.state.begintime == undefined || this.state.begintime == ''|| this.state.endtime == undefined || this.state.endtime == ''|| this.state.description == undefined || this.state.description == ''}
+                                disabled={this.state.place == undefined || this.state.place == '' || this.state.date == undefined || this.state.date == '' || this.state.members == undefined || this.state.members == ''|| this.state.details == undefined || this.state.details == ''|| this.state.description == undefined || this.state.description == ''}
                                 raised primary className="md-cell md-cell--2">Save</Button>
                         <Button id="reset" type="reset" raised secondary className="md-cell md-cell--2">Dismiss</Button>
                         <AlertMessage className="md-row md-full-width" >{this.props.error ? `${this.props.error}` : ''}</AlertMessage>
