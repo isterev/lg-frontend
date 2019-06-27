@@ -31,8 +31,9 @@ export const LunchGroupList = ({data, onDelete}) => (
             </TableBody>
         </DataTable>
 
-        <Link to={'/login'}><button>Login</button></Link>
-        <Link to={'/login'}><button>Login2</button></Link>
+        <Link to={'login'}><button>Login</button></Link>
+        <br></br>
+        <Link to={'homepage'}><button>Homepage</button></Link>
 
     </Page>
 

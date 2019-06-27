@@ -3,6 +3,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+import { HomepageView } from "./views/HomepageView";
 import { LunchGroupsListView } from './views/LunchGroupsListView';
 import { LunchGroupsDetailView }   from './views/LunchGroupsDetailView';
 import { LunchGroupsFormView }   from './views/LunchGroupsFormView';
@@ -37,7 +38,8 @@ export default class App extends React.Component {
                         return (<Redirect to={'/login'}/>)
                     }}, path: '/add',},
                 { component: UserLoginView, path: '/login'},
-                { component: UserSignupView, path: '/register'}
+                { component: UserSignupView, path: '/register'},
+                { component: HomepageView, path: '/homepage'}
             ]
         };
     }
