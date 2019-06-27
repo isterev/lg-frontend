@@ -32,7 +32,7 @@ export const LunchGroupList = ({data, onDelete}) => (
         </DataTable>
 
         <Link to={'/login'}><button>Login</button></Link>
-
+        <Link to={'/login'}><button>Login2</button></Link>
 
     </Page>
 
