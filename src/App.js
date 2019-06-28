@@ -21,7 +21,7 @@ export default class App extends React.Component {
         this.state = {
             title: 'Lunch Groups',
             routes: [
-                { component: LunchGroupsListView , path: '/', exact: true},
+                { component: LunchGroupsListView , path: '/groups', exact: true},
                 { component: LunchGroupsDetailView , path: '/show/:id'},
                 { render: (props) => {
                         if(UserService.isAuthenticated()) {
@@ -39,7 +39,7 @@ export default class App extends React.Component {
                     }}, path: '/add',},
                 { component: UserLoginView, path: '/login'},
                 { component: UserSignupView, path: '/register'},
-                { component: HomepageView, path: '/homepage'}
+                { component: HomepageView, path: '/'}
             ]
         };
     }

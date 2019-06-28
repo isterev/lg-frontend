@@ -6,23 +6,22 @@ import React from 'react';
 import Page from './Page'
 import {Link} from "react-router-dom";
 
-export class Home extends React.Component {
+class Home extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
-        return (
+
+        render(){
+            return(
             <Page>
-        <Link to={'login'}><button>Login</button></Link>
-        <br></br>
-        <Link to={'/show/2'}><button>Login2</button></Link>
+                <h1>Das ist eine tolle Homepage</h1>
+                <br/><br/>
+                <Link to={'groups'}><button>Login</button></Link>
+            </Page>
 
-    </Page>
         );
 
-    }
+        }
+
 }
 
- */
+*/

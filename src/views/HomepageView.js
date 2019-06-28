@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 
 export class HomepageView extends React.Component {
 
+
     constructor(props) {
         super(props);
     }
@@ -18,25 +19,19 @@ export class HomepageView extends React.Component {
                 <h1>Das ist eine tolle Homepage</h1>
                 <br/><br/>
 
-                <Link to={'login'}><button>Login</button></Link>
+                <Link to={'groups'}><button>All Groups</button></Link>
             </Page>
         );
 
     }
 
 
-
-    /*
-    constructor(props) {
-        super(props);
-    }
+/*
     render() {
-        if (this.state.loading) {
-            return (<h2>Loading...</h2>);
-        }
+
 
         return (
-            <Home></Home>
+            <Home/>
         );
     }*/
 

@@ -21,15 +21,15 @@ export default class LunchGroupService {
         });
     }
 
-    /*
-        static getMovie(id) {
+
+        static getLunchGroup(id) {
             return new Promise((resolve, reject) => {
                 HttpService.get(`${LunchGroupService.baseURL()}/${id}`, function(data) {
                     if(data != undefined || Object.keys(data).length !== 0) {
                         resolve(data);
                     }
                     else {
-                        reject('Error while retrieving movie');
+                        reject('Error while retrieving lunchgroup');
                     }
                 }, function(textStatus) {
                     reject(textStatus);
@@ -37,7 +37,7 @@ export default class LunchGroupService {
             });
         }
 
-        static deleteMovie(id) {
+        static deleteLunchGroup(id) {
             return new Promise((resolve, reject) => {
                 HttpService.remove(`${LunchGroupService.baseURL()}/${id}`, function(data) {
                     if(data.message != undefined) {
@@ -52,9 +52,9 @@ export default class LunchGroupService {
             });
         }
 
-        static updateMovie(movie) {
+        static updateLunchGroup(lunch) {
             return new Promise((resolve, reject) => {
-                HttpService.put(`${this.baseURL()}/${movie._id}`, movie, function(data) {
+                HttpService.put(`${this.baseURL()}/${lunch._id}`, lunch, function(data) {
                     resolve(data);
                 }, function(textStatus) {
                    reject(textStatus);
@@ -62,16 +62,17 @@ export default class LunchGroupService {
             });
         }
 
-        static createMovie(movie) {
-            movie.id = Math.floor((Math.random() * 100000000) + 1).toString();
-            movie.posters = {
+        static createLunchGroup(lunch) {
+            lunch.id = Math.floor((Math.random() * 100000000) + 1).toString();
+            /*
+            lunch.posters = {
                 thumbnail: "http://resizing.flixster.com/AeDB8hgaGed_TMCcIF1P_gubGwA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/27/63/11276344_ori.jpg",
                 profile: "http://resizing.flixster.com/AeDB8hgaGed_TMCcIF1P_gubGwA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/27/63/11276344_ori.jpg",
                 detailed: "http://resizing.flixster.com/AeDB8hgaGed_TMCcIF1P_gubGwA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/27/63/11276344_ori.jpg",
                 original: "http://resizing.flixster.com/AeDB8hgaGed_TMCcIF1P_gubGwA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/27/63/11276344_ori.jpg"
-            };
+            };*/
             return new Promise((resolve, reject) => {
-                HttpService.post(LunchGroupService.baseURL(), movie, function(data) {
+                HttpService.post(LunchGroupService.baseURL(), lunch, function(data) {
                     resolve(data);
                 }, function(textStatus) {
                     reject(textStatus);
@@ -80,5 +81,5 @@ export default class LunchGroupService {
         }
 
 
-     */
+
 }

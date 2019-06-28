@@ -54,11 +54,11 @@ class LunchGroupForm extends React.Component {
     }
 
     handleChangeMembers(value) {
-        this.setState(Object.assign({}, this.state, {begintime: value}));
+        this.setState(Object.assign({}, this.state, {members: value}));
     }
 
     handleChangeDetails(value) {
-        this.setState(Object.assign({}, this.state, {endtime: value}));
+        this.setState(Object.assign({}, this.state, {details: value}));
     }
     handleChangeDescription(value) {
         this.setState(Object.assign({}, this.state, {description: value}));
@@ -109,9 +109,10 @@ class LunchGroupForm extends React.Component {
                             id="MembersField"
                             type="text"
                             className="md-row"
-                            required={false}
+                            required={true}
                             value={this.state.members}
-                            onChange={this.handleChangeMembers}/>
+                            onChange={this.handleChangeMembers}
+                            errorText="Members is required"/>
                         <TextField
                             label="Details"
                             id="DetailsField"
@@ -120,7 +121,7 @@ class LunchGroupForm extends React.Component {
                             required={true}
                             value={this.state.details}
                             onChange={this.handleChangeDetails}
-                            errorText="Endtime is required"/>
+                            errorText="Details are required"/>
                         <TextField
                             label="Description"
                             id="DesriptionField"
@@ -128,7 +129,8 @@ class LunchGroupForm extends React.Component {
                             className="md-row"
                             required={true}
                             value={this.state.description}
-                            onChange={this.handleChangeDescription()}/>
+                            onChange={this.handleChangeDescription}
+                            errorText="Description are required"/>
 
 
                         <Button id="submit" type="submit"
